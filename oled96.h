@@ -22,11 +22,16 @@ typedef enum
    FONT_SMALL		// 6x8
 } FONTSIZE;
 
+#define SCL_PIN 27
+#define SDA_PIN 26
+
+#define I2C_ADDR 0x3c
+
 // Initialize the OLED96 library for a specific I2C address
 // Optionally enable inverted or flipped mode
 // returns 0 for success, 1 for failure
 //
-int oledInit(int iChannel, int iAddress, int iType, int bFlip, int bInvert);
+int oledInit(int iType, int bFlip, int bInvert);
 
 // Turns off the display and closes the I2C handle
 void oledShutdown(void);
